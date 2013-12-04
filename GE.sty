@@ -1,0 +1,91 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{black}[2013/12/05 is this package??]
+
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+%% スライドのデザインの設定 %%%
+% テーマの設定(とりあえずdefault)
+\usetheme{default}
+\usecolortheme{default}
+\useoutertheme{default}
+\useinnertheme{default} 
+
+% I referred http://www.colourlovers.com/palette/3154691/The_Great_Escape?widths=1 !
+\definecolor{fontc}{RGB}{39,23,4}
+\definecolor{bgc}{RGB}{255,251,239}
+\definecolor{base}{RGB}{117,104,88}
+\definecolor{sub1}{RGB}{171,172,151}
+\definecolor{sub2}{RGB}{218,208,181}
+
+% normal font setting
+\setbeamercolor{structure}{fg=base}
+\setbeamercolor{normal text}{fg=fontc}
+\setbeamerfont{normal text}{size=\LARGE}
+% background color
+\setbeamercolor{background canvas}{bg=bgc}
+
+% serif only math
+\usefonttheme[onlymath]{serif}
+
+% title page
+\setbeamercolor{author}{fg=base}
+\setbeamercolor{title page}{fg=fontc}
+\setbeamerfont{title page}{size=\large}
+\setbeamerfont{author}{size=\footnotesize}
+\setbeamertemplate{title page}{%
+  \begin{center}
+    \vspace{.2\textheight}
+    \inserttitle
+    
+    \vspace{.01\textheight}    
+    {\small \insertdate}
+
+    \insertsubtitle
+    \vspace{.1\textheight}
+    {\small \insertauthor}
+  \end{center}
+}
+
+\setbeamerfont{footline}{size=\normalsize}
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.4\textwidth,ht=3ex,dp=1ex,left]{}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\textwidth,ht=3ex,dp=1ex,center]{}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.4\textwidth,ht=3ex,dp=1ex,right]{base}
+      \insertframenumber{}/\inserttotalframenumber \hspace*{2ex} 
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% frame title
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{frame begin}{\begin{frame}[shrink=5, fragile]}
+\setbeamertemplate{frame end}{\end{frame}}
+\setbeamercolor{framesection}{fg=base}
+\setbeamercolor{futi}{fg=bgc, bg=sub1}
+\setbeamertemplate{frametitle}{{
+  \vspace*{10pt}
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[dp=10.0ex, leftskip=-1pt]{}
+      \insertframetitle
+    \end{beamercolorbox}
+  }
+  \vspace*{-20pt}
+}}
+
+\setbeamercolor{item}{fg=base}
+
+\setbeamertemplate{background canvas}{%
+
+\begin{tikzpicture}[background rectangle/.style={fill=bgc},show background rectangle] 
+    \clip (0,0) rectangle (\paperwidth,\paperheight);
+    \fill[color=sub2] (20pt, 0) rectangle (0, \paperheight);
+    \fill[color=sub1] (8pt, 0) rectangle (0, \paperheight);
+    \fill[color=base] (3pt, 0) rectangle (0, \paperheight);
+\end{tikzpicture}}
