@@ -64,19 +64,16 @@
 
 % frame title
 \setbeamerfont{frametitle}{size=\large}
-\setbeamertemplate{frame begin}{\begin{frame}[shrink=5, fragile]}
-\setbeamertemplate{frame end}{\end{frame}}
 \setbeamercolor{framesection}{fg=base}
-\setbeamercolor{futi}{fg=bgc, bg=sub1}
 \setbeamertemplate{frametitle}{{
-  \vspace*{10pt}
+  \vspace*{5pt}
   \leavevmode%
   \hbox{%
-    \begin{beamercolorbox}[dp=10.0ex, leftskip=-1pt]{}
+    \begin{beamercolorbox}[leftskip=-1pt, ht=3ex]{framesection}
       \insertframetitle
     \end{beamercolorbox}
   }
-  \vspace*{-20pt}
+  \vskip0pt%
 }}
 
 \setbeamercolor{item}{fg=base}
