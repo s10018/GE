@@ -1,6 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{black}[2013/12/05 is this package??]
+\ProvidesPackage{GE}[2013/12/05 is this package??]
 
 \usepackage{tikz}
 \usetikzlibrary{backgrounds}
@@ -9,14 +9,14 @@
 \usetheme{default}
 \usecolortheme{default}
 \useoutertheme{default}
-\useinnertheme{default} 
+\useinnertheme{default}
 
-% I referred http://www.colourlovers.com/palette/3154691/The_Great_Escape?widths=1 !
-\definecolor{fontc}{RGB}{39,23,4}
-\definecolor{bgc}{RGB}{255,251,239}
-\definecolor{base}{RGB}{117,104,88}
-\definecolor{sub1}{RGB}{171,172,151}
-\definecolor{sub2}{RGB}{218,208,181}
+% I referred http://www.colourlovers.com/palette/3259579/Interior-cleanwarm?widths=1
+\definecolor{fontc}{RGB}{111,93,100}
+\definecolor{bgc}{RGB}{223,223,220}
+\definecolor{sub2}{RGB}{246,234,205}
+\definecolor{sub1}{RGB}{181,146,110}
+\definecolor{base}{RGB}{157,90,62}
 
 % normal font setting
 \setbeamercolor{structure}{fg=base}
@@ -30,9 +30,10 @@
 
 % title page
 \setbeamercolor{author}{fg=base}
-\setbeamercolor{title page}{fg=fontc}
+\setbeamercolor{title page}{fg=base}
 \setbeamerfont{title page}{size=\large}
 \setbeamerfont{author}{size=\footnotesize}
+
 \setbeamertemplate{title page}{%
   \begin{center}
     \vspace{.2\textheight}
@@ -78,11 +79,31 @@
 
 \setbeamercolor{item}{fg=base}
 
+% background setting
 \setbeamertemplate{background canvas}{%
-
 \begin{tikzpicture}[background rectangle/.style={fill=bgc},show background rectangle] 
     \clip (0,0) rectangle (\paperwidth,\paperheight);
-    \fill[color=sub2] (20pt, 0) rectangle (0, \paperheight);
-    \fill[color=sub1] (8pt, 0) rectangle (0, \paperheight);
+    \fill[color=fontc] (22pt, 0) rectangle (0, \paperheight);
+    \fill[color=sub2] (19pt, 0) rectangle (0, \paperheight);
+    \fill[color=sub1] (9pt, 0) rectangle (0, \paperheight);
     \fill[color=base] (3pt, 0) rectangle (0, \paperheight);
 \end{tikzpicture}}
+
+% normal block setting
+\addtobeamertemplate{block begin}{%
+\leftskip=5pt
+}{}
+\setbeamercolor{block title}{use=structure,fg=white,bg=fontc}
+\setbeamercolor{block body}{use=structure,fg=fontc,bg=sub2!20!white}
+% alert block setting
+\addtobeamertemplate{block alerted begin}{%
+\leftskip=5pt
+}{}
+\setbeamercolor{block title alerted}{use=structure,fg=white,bg=sub2!50!red}
+\setbeamercolor{block body alerted}{use=structure,fg=fontc,bg=sub2!20!white}
+
+\addtobeamertemplate{block example begin}{%
+\leftskip=5pt
+}{}
+\setbeamercolor{block title example}{fg=fontc}
+\setbeamercolor{block body example}{use=structure,fg=fontc,bg=sub1!50!white}

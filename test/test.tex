@@ -1,0 +1,80 @@
+\documentclass[17pt,aspectratio=1610,cjk,dvipdfmx]{beamer}
+
+%\usepackage{myslide}
+\usepackage[deluxe,expert]{otf}
+\usepackage{txfonts}
+\usepackage{amsmath,amssymb}
+\renewcommand{\familydefault}{\sfdefault} % サンセリフ体
+\renewcommand{\kanjifamilydefault}{\gtdefault} % ゴシック体
+\usefonttheme{professionalfonts} % 数式はセリフ体
+% しおりのための文字コード設定(UTF-8もこれ)
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+% とくにいらないきがするので
+\setbeamertemplate{navigation symbols}{}
+\usepackage{listings}
+\usepackage{GE}
+\title{すたいるのてすと}
+\author{mai-om}
+\date{きょう}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{frame}
+  \frametitle{てすと}
+  
+  \begin{itemize}
+      \item かじょうがき１
+      \item かじょうがき２
+  \end{itemize}
+
+  \begin{description}
+      \item[日本] かじょうがき１
+      \item[English] かじょうがき２
+  \end{description}
+  
+  \begin{block}{ぶろっく}
+    これはぶろっくです
+
+    ぶろっくなんです？
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{てすと２}
+
+  \begin{exampleblock}{せつめいぶろっく}
+    これはせつめいぶろっく
+
+    せつめいにつかえる？
+
+\begin{lstlisting}[language=Python, basicstyle=\small\ttfamily]
+  for i in range(10):
+      print i
+\end{lstlisting}
+  \end{exampleblock}
+
+  \begin{alertblock}{アラートブロック}
+    注意！！
+  \end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}{証明しない}
+\begin{theorem}
+  $A + 0 = A$
+\end{theorem}
+\begin{proof}
+  定義から$A + 0 = A$はきっと成り立ちます
+\end{proof}
+\end{frame}
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: japanese-latex
+%%% TeX-master: "."
+%%% End: 
