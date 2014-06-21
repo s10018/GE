@@ -1,6 +1,11 @@
 
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{GE}[2013/12/05 is this package??]
+\ProvidesPackage{GE}[2013/12/05]
+
+\usepackage{amsmath,amssymb}
+
+\usefonttheme{professionalfonts} % 数式はセリフ体
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\setbeamertemplate{navigation symbols}{}
 
 \usepackage{tikz}
 \usetikzlibrary{backgrounds}

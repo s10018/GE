@@ -1,17 +1,16 @@
 \documentclass[17pt,aspectratio=1610,cjk,dvipdfmx]{beamer}
 
-%\usepackage{myslide}
 \usepackage[deluxe,expert]{otf}
 \usepackage{txfonts}
 \usepackage{amsmath,amssymb}
-\renewcommand{\familydefault}{\sfdefault} % サンセリフ体
-\renewcommand{\kanjifamilydefault}{\gtdefault} % ゴシック体
-\usefonttheme{professionalfonts} % 数式はセリフ体
-% しおりのための文字コード設定(UTF-8もこれ)
-\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
-% とくにいらないきがするので
-\setbeamertemplate{navigation symbols}{}
 \usepackage{listings}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usefonttheme{professionalfonts}
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\setbeamertemplate{navigation symbols}{}
+
 \usepackage{GE}
 \title{すたいるのてすと}
 \author{mai-om}
